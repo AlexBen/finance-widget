@@ -1,0 +1,1 @@
+require('uikit/src/js/core/offcanvas');

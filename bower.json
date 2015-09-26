@@ -1,0 +1,26 @@
+{
+  "name": "finance-widget",
+  "version": "1.0.0",
+  "description": "Widget",
+  "main": "src/idex.js",
+  "moduleType": [
+    "node"
+  ],
+  "authors": [
+    "Alexander Benderski"
+  ],
+  "license": "MIT",
+  "dependency": {
+    "lodash": "~3.10.1"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+
+  }
+}

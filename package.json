@@ -1,0 +1,25 @@
+{
+  "name": "finance-widget",
+  "version": "1.0.0",
+  "description": "Widget",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexBen/finance-widget.git"
+  },
+  "author": "Alexander Benderski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexBen/finance-widget/issues"
+  },
+  "dependency": {
+    "uikit": "^2.22.0"
+  },
+  "homepage": "https://github.com/AlexBen/finance-widget#readme",
+  "devDependencies": {
+    "bower": "^1.5.3"
+  }
+}

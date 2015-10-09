@@ -11,7 +11,6 @@
   ],
   "license": "MIT",
   "dependency": {
-    "lodash": "~3.10.1"
   },
   "ignore": [
     "**/.*",

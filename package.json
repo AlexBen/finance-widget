@@ -15,11 +15,37 @@
   "bugs": {
     "url": "https://github.com/AlexBen/finance-widget/issues"
   },
-  "dependency": {
-    "uikit": "^2.22.0"
-  },
+  "dependency": {},
   "homepage": "https://github.com/AlexBen/finance-widget#readme",
   "devDependencies": {
-    "bower": "^1.5.3"
+    "bower": "^1.5.3",
+    "browserify": "^11.2.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.3.4",
+    "gulp-header": "1.0.5",
+    "gulp-ignore": "^1.2.0",
+    "gulp-less": "latest",
+    "gulp-minify-css": "^1.1.1",
+    "gulp-rename": "^1.2.0",
+    "gulp-replace": "^0.4.0",
+    "gulp-rimraf": "latest",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-tap": "latest",
+    "gulp-uglify": "^0.3.1",
+    "gulp-util": "latest",
+    "gulp-watch": "^0.6.9",
+    "lodash": "^3.10.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.4.0"
+  },
+  "dependencies": {
+    "angular": "^1.4.7",
+    "angular-animate": "^1.4.7",
+    "angular-aria": "^1.4.7",
+    "angular-material": "^0.11.2",
+    "angular-messages": "^1.4.7",
+    "angular-ui-bootstrap": "^0.13.4",
+    "bootstrap": "^3.3.5"
   }
 }

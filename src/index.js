@@ -1,1 +1,1 @@
-require('uikit/src/js/core/offcanvas');
+module.exports = require('./app/app');

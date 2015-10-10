@@ -11,60 +11,75 @@
 </script>
 <style>
     .fw-container {
-        height: 300px;
+        height: 400px;
         width: 400px;
         position: relative;
         border: 1px black solid;
         padding: 1px;
     }
+    .fw-content {
+        height: 400px;
+        overflow: auto;
+    }
     #finance-widget {
         /*background-color: #3399ff;*/
         height: 100%;
         width: 100%;
+        font-size: 0.7em;
+    }
+</style>
+<style>
+    md-radio-button {
+        display: inline;
+        margin-left: 5px;
+    }
+
+    md-toolbar .md-button md-icon.md-default-theme.white {
+        color: white;
     }
 </style>
 <div class="fw-container">
     <div id="finance-widget">
-        <div ng-controller="FinanceWidgetController" layout="column" style="height:500px;" ng-cloak>
+        <div ng-controller="FinanceWidgetController" layout="column"  ng-cloak>
             <section layout="row" flex>
                 <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="fw-md-menu">
-                    <md-toolbar class="md-theme-light">
-                        <h1 class="md-toolbar-tools">Sidenav Left</h1>
-                    </md-toolbar>
                     <md-content ng-controller="MenuController" layout-padding>
+                        <h2>Фильтр</h2>
+
                         <form>
-                            <md-input-container>
-                                <label for="testInput">Test input</label>
-                                <input type="text" id="testInput"
-                                       ng-model="data" md-autofocus>
-                            </md-input-container>
+                            <md-radio-group ng-model="$parent.filters.currency">
+                                <md-radio-button value="BYR" class="md-primary">BYR</md-radio-button>
+                                <md-radio-button value="USD">USD</md-radio-button>
+                                <md-radio-button value="EUR">EUR</md-radio-button>
+                                <md-radio-button value="RUR">RUR</md-radio-button>
+                            </md-radio-group>
                         </form>
-                        <md-button ng-click="close()" class="md-primary">
-                            Close Sidenav Left
-                        </md-button>
                     </md-content>
                 </md-sidenav>
 
-                <md-content flex layout-padding>
-                    <div layout="column" layout-fill layout-align="top center">
-                        <div>
+                <div style="width: 100%; height: 400px; overflow: hidden" layout="column" >
+                    <md-toolbar md-scroll-shrink ng-if="true">
+                        <div class="md-toolbar-tools">
                             <md-button class="md-icon-button md-primary" ng-click="toggleMenu()" aria-label="фильтр">
-                                <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+                                <md-icon class="white" md-svg-icon="img/icons/menu.svg"></md-icon>
                             </md-button>
                         </div>
-                    </div>
-                    <div flex>
+                    </md-toolbar>
+                    <md-content flex>
                         <md-list>
                             <md-list-item class="md-3-line" ng-repeat="item in debets">
-                                <span>{{item.bank}}</span>
+                                <img ng-src="logos/mtbank.png" class="md-avatar" alt="{{item.bank}}"/>
+
                                 <div class="md-list-item-text" layout="column">
                                     <h3>{{ item.name }}</h3>
-                                    <h4>{{ item.percents }}</h4>
-                                    <p>{{ item.period }}</p>
+                                    <h4>{{ item.interest }} % </h4>
+
+                                    <p>{{ item.period }} дней </p>
                                 </div>
                             </md-list-item>
-                    </div>
-                </md-content>
+                        </md-list>
+                    </md-content>
+                </div>
             </section>
         </div>
 

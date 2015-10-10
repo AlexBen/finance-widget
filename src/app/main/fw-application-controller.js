@@ -9,12 +9,10 @@ angular.module('finance-widget').controller('FinanceWidgetController',
             $log.debug(resp);
             $scope.debets = resp.data;
         });
-        //$scope.debets = require('../debets.json');
+
         $scope.filters = {
-
+            currency: 'BYR'
         };
-
-
 
         $scope.toggleMenu = buildToggler(fwMdComponents.MENU_ID);
 

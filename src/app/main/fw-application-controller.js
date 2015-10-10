@@ -1,5 +1,20 @@
-angular.module('finance-widget').controller('AppCtrl',
-    function ($scope, $timeout, $mdSidenav, $mdUtil, $log, fwMdComponents) {
+angular.module('finance-widget').controller('FinanceWidgetController',
+    function ($scope, $timeout, $mdSidenav, $mdUtil, $log, fwMdComponents, $http) {
+
+        $scope.debets = [];
+
+        $http.get('debets', {
+            contentType: 'application/json'
+        }).then(function(resp){
+            $log.debug(resp);
+            $scope.debets = resp.data;
+        });
+        //$scope.debets = require('../debets.json');
+        $scope.filters = {
+
+        };
+
+
 
         $scope.toggleMenu = buildToggler(fwMdComponents.MENU_ID);
 

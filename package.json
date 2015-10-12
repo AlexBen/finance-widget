@@ -18,6 +18,7 @@
   "dependency": {},
   "homepage": "https://github.com/AlexBen/finance-widget#readme",
   "devDependencies": {
+    "babelify": "^6.3.0",
     "bower": "^1.5.3",
     "browserify": "^11.2.0",
     "express": "^4.13.3",
@@ -48,8 +49,11 @@
     "angular-animate": "^1.4.7",
     "angular-aria": "^1.4.7",
     "angular-material": "^0.11.2",
-    "angular-messages": "^1.4.7",
-    "angular-ui-bootstrap": "^0.13.4",
-    "bootstrap": "^3.3.5"
+    "angular-messages": "^1.4.7"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
   }
 }

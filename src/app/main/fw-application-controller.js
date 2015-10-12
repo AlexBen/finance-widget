@@ -1,3 +1,5 @@
+import mapKeys from  'lodash';
+
 angular.module('finance-widget').controller('FinanceWidgetController',
     function ($scope, $timeout, $mdSidenav, $mdUtil, $log, fwMdComponents, $http) {
 
@@ -13,6 +15,22 @@ angular.module('finance-widget').controller('FinanceWidgetController',
         $scope.filters = {
             currency: 'BYR'
         };
+
+        $scope.filtersCollection = [];
+
+        $scope.$watchCollection('filters', function(newValue) {
+            var arr = [];
+            Object.keys($scope.filters).forEach( function(key) {
+                var val = $scope.filters[key];
+                arr.push({key: key, value: val});
+            });
+            $scope.filtersCollection = arr;
+        });
+
+        $scope.removeFilter = function(key) {
+            delete $scope.filters[key];
+        };
+
 
         $scope.filterFunction = function(entry) {
             if ($scope.filters.currency) {

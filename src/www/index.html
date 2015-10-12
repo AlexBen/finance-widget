@@ -63,6 +63,12 @@
                             <md-button class="md-icon-button md-primary" ng-click="toggleMenu()" aria-label="фильтр">
                                 <md-icon class="white" md-svg-icon="img/icons/menu.svg"></md-icon>
                             </md-button>
+                            <md-chips ng-model="filtersCollection" md-on-remove="removeFilter($chip.key)"
+                                      ng-if="filtersCollection.length">
+                                <md-chip-template>
+                                    <strong>{{$chip.value}}</strong>
+                                </md-chip-template>
+                            </md-chips>
                         </div>
                     </md-toolbar>
                     <md-content flex>

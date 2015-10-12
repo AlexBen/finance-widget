@@ -67,13 +67,12 @@
                     </md-toolbar>
                     <md-content flex>
                         <md-list>
-                            <md-list-item class="md-3-line" ng-repeat="item in debets">
+                            <md-list-item class="md-2-line" ng-repeat="item in debets | filter : filterFunction">
                                 <img ng-src="logos/mtbank.png" class="md-avatar" alt="{{item.bank}}"/>
 
                                 <div class="md-list-item-text" layout="column">
                                     <h3>{{ item.name }}</h3>
                                     <h4>{{ item.interest }} % </h4>
-
                                     <p>{{ item.period }} дней </p>
                                 </div>
                             </md-list-item>

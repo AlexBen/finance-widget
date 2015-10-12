@@ -14,6 +14,15 @@ angular.module('finance-widget').controller('FinanceWidgetController',
             currency: 'BYR'
         };
 
+        $scope.filterFunction = function(entry) {
+            if ($scope.filters.currency) {
+                if (entry.currency != $scope.filters.currency){
+                    return false;
+                }
+            }
+            return true;
+        };
+
         $scope.toggleMenu = buildToggler(fwMdComponents.MENU_ID);
 
         /**

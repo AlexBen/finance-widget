@@ -5,6 +5,7 @@ var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var gutil = require('gulp-util');
 var sourcemaps = require('gulp-sourcemaps');
+var uglify = require('gulp-uglify');
 var assign = require('lodash').assign;
 
 // add custom browserify options here
@@ -37,5 +38,12 @@ module.exports = function (gulp, config) {
             .pipe(gulp.dest('./dist'));
     }
 
-
+    gulp.task('build-min', ['build'], function(){
+        return
+            b.bundle()
+            .pipe(source('bundle.min.js'))
+            .pipe(buffer())
+            .pipe(uglify())
+            .pipe(gulp.dest('./dist'));
+    });
 };

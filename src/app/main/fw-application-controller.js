@@ -13,7 +13,9 @@ angular.module('finance-widget').controller('FinanceWidgetController',
         });
 
         $scope.filters = {
-            currency: 'BYR'
+            currency: 'BYR',
+            interest: '',
+            sum: ''
         };
 
         $scope.filtersCollection = [];
@@ -22,7 +24,9 @@ angular.module('finance-widget').controller('FinanceWidgetController',
             var arr = [];
             Object.keys($scope.filters).forEach( function(key) {
                 var val = $scope.filters[key];
-                arr.push({key: key, value: val});
+                if (val) {
+                    arr.push({key: key, value: val});
+                }
             });
             $scope.filtersCollection = arr;
         });
@@ -35,6 +39,16 @@ angular.module('finance-widget').controller('FinanceWidgetController',
         $scope.filterFunction = function(entry) {
             if ($scope.filters.currency) {
                 if (entry.currency != $scope.filters.currency){
+                    return false;
+                }
+            }
+            if ($scope.filters.interest) {
+                if (entry.interest < $scope.filters.interest) {
+                    return false;
+                }
+            }
+            if ($scope.filters.sum) {
+                if (entry.sum < $scope.filters.sum) {
                     return false;
                 }
             }

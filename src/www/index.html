@@ -37,6 +37,36 @@
     md-toolbar .md-button md-icon.md-default-theme.white {
         color: white;
     }
+    .range-slider-container {
+        position:relative;
+        width:100%;
+        height:100px;
+    }
+
+    .range-slider-left {
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+    md-slider .md-track-container .md-track.md-track-fill {
+        background-color:rgb(132,132,132);
+    }
+
+    .range-slider-right {
+        position:absolute;
+        top:0;
+        right:0px;
+    }
+
+    /* Overwrite specific to range adaptation*/
+       .range-slider-right md-slider .md-thumb-container {
+           transition: -webkit-transform 0s linear;
+           transition: transform 0s linear;
+       }
+
+    .range-slider-left md-slider.md-default-theme .md-track.md-track-fill {
+        background-color:rgba(0,0,0,0.26) !important;
+    }
 </style>
 <div class="fw-container">
     <div id="finance-widget">
@@ -46,14 +76,24 @@
                     <md-content ng-controller="MenuController" layout-padding>
                         <h2>Фильтр</h2>
 
-                        <form>
                             <md-radio-group ng-model="$parent.filters.currency">
                                 <md-radio-button value="BYR" class="md-primary">BYR</md-radio-button>
                                 <md-radio-button value="USD">USD</md-radio-button>
                                 <md-radio-button value="EUR">EUR</md-radio-button>
                                 <md-radio-button value="RUR">RUR</md-radio-button>
                             </md-radio-group>
-                        </form>
+                        <div layout>
+                            <div flex="10" layout layout-align="center center">
+                                <span class="md-body-1"> % </span>
+                            </div>
+                            <md-slider flex min="{{getSumMin()}}" max="{{getSumMax()}}" step="{{getSumStep()}}"
+                                       md-discrete ng-model="$parent.filters.sum" aria-label="red" class>
+                            </md-slider>
+                        </div>
+                            <!--<range-slider min="10" max="40" step="1" lowerValue="$parent.filters.interest.from"-->
+                                         <!--upperValue="$parent.filters.interest.to"></range-slider>-->
+
+
                     </md-content>
                 </md-sidenav>
 
@@ -66,7 +106,7 @@
                             <md-chips ng-model="filtersCollection" md-on-remove="removeFilter($chip.key)"
                                       ng-if="filtersCollection.length">
                                 <md-chip-template>
-                                    <strong>{{$chip.value}}</strong>
+                                    {{$chip.value}}
                                 </md-chip-template>
                             </md-chips>
                         </div>

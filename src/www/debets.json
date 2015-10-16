@@ -8,7 +8,7 @@
     "withdrawal": "нет",
     "isInterestFixed": true,
     "period": 30,
-    "summ": 1000000,
+    "sum": 10000000,
     "term": 180,
     "capitalization": "ежемесячно"
   },
@@ -21,7 +21,7 @@
     "withdrawal": "нет",
     "isInterestFixed": false,
     "period": 30,
-    "summ": 1000000,
+    "sum": 1000000,
     "term": 30,
     "capitalization": "ежемесячно"
   },
@@ -34,7 +34,7 @@
     "withdrawal": "нет",
     "isInterestFixed": true,
     "period": 30,
-    "summ": 100000,
+    "sum": 100000,
     "term": 180,
     "capitalization": "ежемесячно"
   },
@@ -47,7 +47,7 @@
     "withdrawal": "нет",
     "isInterestFixed": true,
     "period": 30,
-    "summ": 1000000,
+    "sum": 1000000,
     "term": 35,
     "capitalization": "ежемесячно"
   },
@@ -60,7 +60,7 @@
     "withdrawal": "нет",
     "isInterestFixed": true,
     "period": 30,
-    "summ": 1000000,
+    "sum": 1000000,
     "term": 90,
     "capitalization": "ежемесячно"
   },
@@ -73,7 +73,7 @@
     "withdrawal": "с ограничениями",
     "isInterestFixed": true,
     "period": 360,
-    "summ": 1000000,
+    "sum": 1000000,
     "term": 360,
     "capitalization": "ежемесячно"
   },
@@ -86,7 +86,7 @@
     "withdrawal": "нет",
     "isInterestFixed": true,
     "period": 30,
-    "summ": 1000000,
+    "sum": 1000000,
     "term": 60,
     "capitalization": "ежемесячно"
   },
@@ -99,7 +99,7 @@
     "withdrawal": "нет",
     "isInterestFixed": false,
     "period": 30,
-    "summ": 100000,
+    "sum": 100000,
     "term": 180,
     "capitalization": "в конце срока"
   },
@@ -112,7 +112,7 @@
     "withdrawal": "с ограничениями",
     "isInterestFixed": true,
     "period": 30,
-    "summ": 100,
+    "sum": 100,
     "term": 30,
     "capitalization": "в конце срока"
   },
@@ -125,7 +125,7 @@
     "withdrawal": "нет",
     "isInterestFixed": true,
     "period": 360,
-    "summ": 5000000,
+    "sum": 5000000,
     "term": 360,
     "capitalization": "ежемесячно"
   },
@@ -138,7 +138,7 @@
     "withdrawal": "с ограничениями",
     "isInterestFixed": false,
     "period": 360,
-    "summ": 10000000,
+    "sum": 10000000,
     "term": 360,
     "capitalization": "ежемесячно"
   },
@@ -151,7 +151,7 @@
     "withdrawal": "нет",
     "isInterestFixed": true,
     "period": 90,
-    "summ": 1000000,
+    "sum": 1000000,
     "term": 90,
     "capitalization": "ежемесячно"
   },
@@ -164,7 +164,7 @@
     "withdrawal": "нет",
     "isInterestFixed": false,
     "period": 150,
-    "summ": 100000000,
+    "sum": 100000000,
     "term": 150,
     "capitalization": "в конце срока"
   }

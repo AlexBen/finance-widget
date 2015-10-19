@@ -84,12 +84,16 @@
                             </md-radio-group>
                         <div layout>
                             <div flex="10" layout layout-align="center center">
-                                <span class="md-body-1"> % </span>
+                                <span class="md-body-1">Срок</span>
                             </div>
-                            <md-slider flex min="{{getSumMin()}}" max="{{getSumMax()}}" step="{{getSumStep()}}"
-                                       md-discrete ng-model="$parent.filters.sum" aria-label="red" class>
+                            <md-slider flex min="{{getTermMin()}}" max="{{getTermMax()}}" step="{{getTermStep()}}"
+                                       ng-model="$parent.filters.term" aria-label="red" id="term-slider" class>
                             </md-slider>
+                            <div flex="20" layout layout-align="center center">
+                                <input flex type="number" ng-model="$parent.filters.term" aria-label="red" aria-controls="term-slider">
+                            </div>
                         </div>
+                        
                             <!--<range-slider min="10" max="40" step="1" lowerValue="$parent.filters.interest.from"-->
                                          <!--upperValue="$parent.filters.interest.to"></range-slider>-->
 
@@ -104,10 +108,17 @@
                                 <md-icon class="white" md-svg-icon="img/icons/menu.svg"></md-icon>
                             </md-button>
                             <md-chips ng-model="filtersCollection" md-on-remove="removeFilter($chip.key)"
-                                      ng-if="filtersCollection.length">
+                                      ng-if="filtersCollection.length" readonly="false">
                                 <md-chip-template>
-                                    {{$chip.value}}
+                                    <span>{{$chip.value}}</span>
                                 </md-chip-template>
+                                <button md-chip-remove class="md-chip-remove" ng-if="$chip.key != 'currency'"
+                                        type="button" aria-hidden="true" tabindex="-1">
+                                    <md-icon md-svg-icon="md-close" class="md-default-theme"
+                                             aria-hidden="true">
+                                    </md-icon>
+                                    <span class="md-visually-hidden ng-binding"> Удалить фильтр </span>
+                                </button>
                             </md-chips>
                         </div>
                     </md-toolbar>

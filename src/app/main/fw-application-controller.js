@@ -15,7 +15,8 @@ angular.module('finance-widget').controller('FinanceWidgetController',
         $scope.filters = {
             currency: 'BYR',
             interest: '',
-            sum: ''
+            sum: '',
+            term: ''
         };
 
         $scope.filtersCollection = [];

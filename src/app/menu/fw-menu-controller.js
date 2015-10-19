@@ -3,36 +3,54 @@ angular.module('finance-widget').controller('MenuController',
 
         $log.debug($scope.$parent);
 
-        $scope.filterExtension = {
-            currency: {
+        const filterExtension = {
+
                 'BYR': {
                     sumMin: 1000000,
                     sumMax: 100000000,
-                    sumStep: 100000
+                    sumStep: 100000,
+                    termMin: 30,
+                    termMax: 360,
+                    termStep: 30
                 },
                 'USD': {
                     sumMin: 100,
-                    sumMax: 9999
-
+                    sumMax: 10000,
+                    sumStep: 10,
+                    termMin: 30,
+                    termMax: 360,
+                    termStep: 30
+                },
+                'EUR': {
+                    sumMin: 100,
+                    sumMax: 10000,
+                    sumStep: 10,
+                    termMin: 30,
+                    termMax: 360,
+                    termStep: 30
                 }
 
-            }
+
+        };
+
+        $scope.getFilter = function(filterType) {
+          return $scope.$parent.filters[filterType];
         };
 
         var getFromExtension = function(property) {
-            return $scope.filterExtension.currency[$scope.$parent.filters.currency][property];
+            return filterExtension[$scope.getFilter('currency')][property];
         };
 
-        $scope.getSumMin = function() {
-            return getFromExtension('sumMin');
+        $scope.getTermMin = function() {
+            return getFromExtension('termMin');
         };
 
-        $scope.getSumMax = function() {
-            return getFromExtension('sumMax');
+        $scope.getTermMax = function() {
+            return getFromExtension('termMax');
         };
 
-        $scope.getSumStep = function() {
-            return getFromExtension('sumStep');
+        $scope.getTermStep = function() {
+            return getFromExtension('termStep');
         };
 
         $scope.close = function () {

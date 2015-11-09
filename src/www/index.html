@@ -58,6 +58,16 @@
         right:0px;
     }
 
+    md-sidenav.md-sidenav-menu {
+        width: 320px;
+        max-width: 320px;
+        min-width: 320px;
+    }
+
+    /*.slider-label {*/
+        /*padding-right: 10px;*/
+    /*}*/
+
     /* Overwrite specific to range adaptation*/
        .range-slider-right md-slider .md-thumb-container {
            transition: -webkit-transform 0s linear;
@@ -72,7 +82,7 @@
     <div id="finance-widget">
         <div ng-controller="FinanceWidgetController" layout="column"  ng-cloak>
             <section layout="row" flex>
-                <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="fw-md-menu">
+                <md-sidenav class="md-sidenav-left md-whiteframe-z2 md-sidenav-menu" md-component-id="fw-md-menu">
                     <md-content ng-controller="MenuController" layout-padding>
                         <h2>Фильтр</h2>
 
@@ -83,13 +93,13 @@
                                 <md-radio-button value="RUR">RUR</md-radio-button>
                             </md-radio-group>
                         <div layout>
-                            <div flex="10" layout layout-align="center center">
+                            <div class="slider-label" flex="15" layout layout-align="center center">
                                 <span class="md-body-1">Срок</span>
                             </div>
-                            <md-slider flex min="{{getTermMin()}}" max="{{getTermMax()}}" step="{{getTermStep()}}"
+                            <md-slider flex="70" min="{{getTermMin()}}" max="{{getTermMax()}}" step="{{getTermStep()}}"
                                        ng-model="$parent.filters.term" aria-label="red" id="term-slider" class>
                             </md-slider>
-                            <div flex="20" layout layout-align="center center">
+                            <div flex="10" layout layout-align="center center">
                                 <input flex type="number" ng-model="$parent.filters.term" aria-label="red" aria-controls="term-slider">
                             </div>
                         </div>
